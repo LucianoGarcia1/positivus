@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ButtonCta } from "./ButtonCta";
 import Image from "next/image";
+import { ButtonCta } from "./ButtonCta";
 
 export const Header = () => {
   return (
@@ -34,11 +34,9 @@ export const Header = () => {
               <Link href="/">Blog</Link>
             </li>
 
-            <ButtonCta
-              type="button"
-              children="Request a quote"
-              classe="btnWhite"
-            />
+            <ButtonCta type="button" classe="btnWhite">
+              Request a quote
+            </ButtonCta>
           </ul>
         </nav>
       </div>
@@ -50,11 +48,9 @@ export const Header = () => {
             online through a range of services including SEO, PPC, social media
             marketing, and content creation.
           </p>
-          <ButtonCta
-            type="button"
-            children="Request a quote"
-            classe="btnBlack"
-          />
+          <ButtonCta type="button" classe="btnBlack">
+            Book a consultation
+          </ButtonCta>
         </div>
         <div className="c-header__ilustration">
           <Image
