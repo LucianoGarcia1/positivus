@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ButtonCta } from "./ButtonCta";
+import { Img } from "./Image";
 
 export const Header = () => {
   return (
@@ -50,18 +51,16 @@ export const Header = () => {
           />
         </div>
         <div className="c-header__ilustration">
-          <img src="/img/cta-header.svg" alt="Ilustration" />
+          <Img
+            src="/img/cta-header.svg"
+            alt="ilustration"
+            width={600.46}
+            height={515}
+          />
         </div>
       </div>
 
-      <div className="c-header__logotypes">
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-      </div>
+      <div className="c-header__logotypes"></div>
     </header>
   );
 };

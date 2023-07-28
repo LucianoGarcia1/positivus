@@ -8,10 +8,16 @@
 
 html,
 body {
+  width: 100%;
   min-height: 100vh;
 }
 
+.c-layout {
+  width: 100%;
+}
+
 .c-header {
+  width: 100%;
   min-height: 48.1875rem;
   padding-top: 3.75rem;
   padding-right: 6.25rem;

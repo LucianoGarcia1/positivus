@@ -1,3 +1,6 @@
 @use "../abstracts/mixins/mixins" as mixins;
 @use "../abstracts/function/function" as functions;
 
+.c-layout {
+  width: 100%;
+}
