@@ -13,16 +13,19 @@ body {
 }
 
 .c-layout {
+  max-width: 1440px;
   width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 3.75rem;
+  padding-right: 6.25rem;
+  padding-bottom: 0rem;
+  padding-left: 6.25rem;
 }
 
 .c-header {
   width: 100%;
   min-height: 48.1875rem;
-  padding-top: 3.75rem;
-  padding-right: 6.25rem;
-  padding-bottom: 0rem;
-  padding-left: 6.25rem;
   display: flex;
   align-items: start;
   justify-content: start;

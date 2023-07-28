@@ -2,5 +2,9 @@
 @use "../abstracts/function/function" as functions;
 
 .c-layout {
+  max-width: 1440px;
   width: 100%;
+  display: block;
+  margin: 0 auto;
+  @include mixins.padding(60px, 100px, 0px, 100px);
 }
