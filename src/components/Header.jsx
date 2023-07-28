@@ -1,13 +1,19 @@
 import Link from "next/link";
 import { ButtonCta } from "./ButtonCta";
-import { Img } from "./Image";
+import Image from "next/image";
 
 export const Header = () => {
   return (
     <header className="c-header">
       <div className="c-header__header">
         <div className="c-header__logo">
-          <Img src="/img/logo2.svg" alt="Positivus" width={220} height={36} />
+          <Image
+            priority
+            src="/img/logo2.svg"
+            alt="Positivus"
+            width={220}
+            height={36}
+          />
         </div>
 
         <nav className="c-header__nav">
@@ -51,7 +57,8 @@ export const Header = () => {
           />
         </div>
         <div className="c-header__ilustration">
-          <Img
+          <Image
+            priority
             src="/img/cta-header.svg"
             alt="ilustration"
             width={600.46}
