@@ -1,0 +1,20 @@
+@use "../abstracts/variables/variables" as variables;
+@use "../abstracts/function/function" as functions;
+button {
+  border-radius: functions.rem(14px);
+  font-size: variables.$small;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.25s;
+  border: functions.rem(1px) solid variables.$dark;
+}
+.btnWhite {
+  min-width: functions.rem(231px);
+  height: functions.rem(68px);
+  background-color: transparent;
+  color: variables.$black;
+
+  &:hover {
+    background-color: variables.$green;
+  }
+}

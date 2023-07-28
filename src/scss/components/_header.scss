@@ -1,0 +1,62 @@
+@use "../abstracts/mixins/mixins" as mixins;
+@use "../abstracts/variables/variables" as variables;
+@use "../abstracts/function/function" as functions;
+
+.c-header {
+  min-height: functions.rem(771px);
+  @include mixins.padding(60px, 100px, 0px, 100px);
+  @include mixins.flex(start, start, column);
+  @include mixins.gap(70px);
+}
+
+.c-header__header {
+  width: 100%;
+  height: functions.rem(68px);
+  @include mixins.flex(space-between, center, row);
+
+  .c-header__menu {
+    @include mixins.flex(center, center, row);
+    list-style: none;
+    @include mixins.gap(40px);
+
+    a {
+      font-size: variables.$small;
+      color: variables.$black;
+      text-decoration: none;
+      transition: all 0.25s;
+
+      &:hover {
+        text-decoration: functions.rem(2px) underline variables.$black;
+      }
+    }
+  }
+}
+
+.c-header__cta {
+  width: 100%;
+  min-height: functions.rem(515px);
+  @include mixins.flex(space-between, start, row);
+
+  .c-header__details {
+    width: functions.rem(531px);
+    @include mixins.flex(start, start, column);
+    gap: 35px;
+
+    h1 {
+      font-size: variables.$h1Desktop;
+      color: variables.$black;
+      font-weight: 700;
+    }
+    p {
+      font-size: variables.$small;
+      color: variables.$black;
+    }
+  }
+
+  .c-header__ilustration {
+    img {
+      width: functions.rem(600.46px);
+      height: functions.rem(515px);
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+.c-header {
+  min-height: 48.1875rem;
+  padding-top: 3.75rem;
+  padding-right: 6.25rem;
+  padding-bottom: 0rem;
+  padding-left: 6.25rem;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 4.375rem;
+}
+
+.c-header__header {
+  width: 100%;
+  height: 4.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.c-header__header .c-header__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  list-style: none;
+  gap: 2.5rem;
+}
+.c-header__header .c-header__menu a {
+  font-size: 1.25rem;
+  color: #000000;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.c-header__header .c-header__menu a:hover {
+  -webkit-text-decoration: 0.125rem underline #000000;
+          text-decoration: 0.125rem underline #000000;
+}
+
+.c-header__cta {
+  width: 100%;
+  min-height: 32.1875rem;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.c-header__cta .c-header__details {
+  width: 33.1875rem;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 35px;
+}
+.c-header__cta .c-header__details h1 {
+  font-size: 3.75rem;
+  color: #000000;
+  font-weight: 700;
+}
+.c-header__cta .c-header__details p {
+  font-size: 1.25rem;
+  color: #000000;
+}
+.c-header__cta .c-header__ilustration img {
+  width: 37.52875rem;
+  height: 32.1875rem;
+}
+
+button {
+  border-radius: 0.875rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.25s;
+  border: 0.0625rem solid #191a23;
+}
+
+.btnWhite {
+  min-width: 14.4375rem;
+  height: 4.25rem;
+  background-color: transparent;
+  color: #000000;
+}
+.btnWhite:hover {
+  background-color: #b9ff66;
+}/*# sourceMappingURL=index.css.map */

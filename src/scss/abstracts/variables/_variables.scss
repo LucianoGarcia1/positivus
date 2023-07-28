@@ -1,0 +1,10 @@
+@use "../function/function" as function;
+//COLORS
+$black: #000000;
+$white: #ffffff;
+$gray: #f3f3f3;
+$green: #b9ff66;
+$dark: #191a23;
+
+$small: function.rem(20px);
+$h1Desktop: function.rem(60px);

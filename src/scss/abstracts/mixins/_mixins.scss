@@ -1,0 +1,19 @@
+@use "../function/function" as functions;
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin gap($value) {
+  gap: functions.rem($value);
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: functions.rem($top);
+  padding-right: functions.rem($right);
+  padding-bottom: functions.rem($bottom);
+  padding-left: functions.rem($left);
+}
