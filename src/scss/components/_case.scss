@@ -1,0 +1,116 @@
+@use "../abstracts/mixins/mixins" as mixins;
+@use "../abstracts/variables/variables" as variables;
+@use "../abstracts/function/function" as functions;
+.c-case {
+  width: 100%;
+  padding: functions.rem(60px) 0;
+
+  @include mixins.device(d) {
+    padding: functions.rem(140px) 0;
+  }
+}
+.c-case__ColumnCases {
+  width: 100%;
+  @include mixins.flex(center, center, column);
+  gap: functions.rem(30px);
+
+  &:nth-child(2) {
+    padding: functions.rem(40px) 0;
+  }
+
+  @include mixins.device(t) {
+    &:nth-child(1) {
+      @include mixins.flex(flex-start, center, row);
+    }
+
+    @include mixins.flex(flex-start, flex-start, column);
+  }
+
+  h2{
+    text-align: center;
+  }
+
+  p {
+    max-width: functions.rem(580px);
+    text-align: center;
+
+    @include mixins.device(t) {
+      text-align: left;
+    }
+  }
+} // COLUMN
+
+.c-case__InlineCases {
+  width: 100%;
+  @include mixins.flex(flex-start, center, row);
+  overflow-x: auto;
+  gap: functions.rem(16px);
+  border-radius: 45px;
+  box-shadow: 0 0 0 1px variables.$gray;
+
+  @include mixins.device(d) {
+    gap: 0;
+  }
+
+  .c-case__Box {
+    min-width: 400px;
+    width: 100%;
+    min-height: functions.rem(252px);
+    padding: functions.rem(40px) functions.rem(30px);
+    background-color: variables.$dark;
+    border-radius: functions.rem(45px);
+    @include mixins.flex(center, flex-start, column);
+
+    @include mixins.device(d) {
+      min-width: functions.rem(286px);
+      border-radius: 0;
+      height: functions.rem(252px);
+
+      &:nth-child(1) {
+        border-top-left-radius: functions.rem(45px);
+        border-bottom-left-radius: functions.rem(45px);
+      }
+
+      &:nth-child(3) {
+        border-top-right-radius: functions.rem(45px);
+        border-bottom-right-radius: functions.rem(45px);
+      }
+    }
+
+    div {
+      width: 100%;
+
+      @include mixins.device(d) {
+        &.c-case__borderR {
+          border-right: 1px solid variables.$gray;
+          padding-right: functions.rem(30px);
+        }
+
+        &.c-case__borderL {
+          border-left: 1px solid variables.$gray;
+          padding-left: functions.rem(30px);
+        }
+      }
+
+      p {
+        color: variables.$white;
+        text-align: left;
+        margin-bottom: functions.rem(20px);
+      }
+
+      a {
+        max-width: functions.rem(160px);
+        width: 100%;
+        gap: functions.rem(16px);
+        @include mixins.flex(flex-start, center, row);
+        color: variables.$green;
+        font-size: variables.$small;
+        transition: all 0.5s;
+
+        &:hover {
+          transform: scale(1.06);
+        }
+      }
+    }
+  }
+}

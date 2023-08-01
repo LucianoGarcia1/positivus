@@ -1,4 +1,5 @@
 @use "../function/function" as functions;
+@use "../variables/variables" as variables;
 
 @mixin flex($justify, $align, $direction) {
   display: flex;
@@ -16,4 +17,20 @@
   padding-right: functions.rem($right);
   padding-bottom: functions.rem($bottom);
   padding-left: functions.rem($left);
+}
+
+@mixin device($size) {
+  @if $size == d {
+    @media screen and (min-width: variables.$desktop) {
+      @content;
+    }
+  } @else if $size == t {
+    @media screen and (min-width: variables.$tablet) {
+      @content;
+    }
+  } @else if $size == m {
+    @media screen and (min-width: variables.$mobile) {
+      @content;
+    }
+  }
 }

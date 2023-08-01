@@ -1,0 +1,102 @@
+@use "../abstracts/mixins/mixins" as mixins;
+@use "../abstracts/variables/variables" as variables;
+@use "../abstracts/function/function" as functions;
+
+.c-faq {
+  width: 100%;
+  padding-bottom: functions.rem(60px);
+
+  @include mixins.device(d) {
+    padding-bottom: functions.rem(140px);
+  }
+}
+
+.c-faq__Column {
+  width: 100%;
+  @include mixins.flex(center, center, column);
+  gap: functions.rem(30px);
+
+  &:nth-child(2) {
+    padding: functions.rem(40px) 0;
+  }
+
+  @include mixins.device(t) {
+    &:nth-child(1) {
+      @include mixins.flex(flex-start, center, row);
+    }
+
+    @include mixins.flex(flex-start, flex-start, column);
+  }
+
+  h2 {
+    text-align: center;
+  }
+  p.c-faq__description {
+    max-width: functions.rem(292px);
+    text-align: center;
+
+    @include mixins.device(t) {
+      text-align: left;
+    }
+  }
+}
+
+.c-faq__faqBox {
+  width: 100%;
+  @include mixins.flex(center, center, column);
+  border-radius: functions.rem(45px);
+  background-color: variables.$gray;
+  border: 1px solid variables.$dark;
+  box-shadow: 0 5px 0 variables.$dark;
+  padding: functions.rem(30px);
+  cursor: pointer;
+  transition: all 0.5s;
+
+  @include mixins.device(d) {
+    @include mixins.padding(41px, 60px, 41px, 60px);
+  }
+
+  .c-faq__Title {
+    width: 100%;
+    @include mixins.flex(space-between, center, row);
+
+    h4 {
+      display: flex;
+      align-items: center;
+      gap: functions.rem(25px);
+
+      span {
+        font-size: variables.$h3Desktop;
+
+        @include mixins.device(d) {
+          font-size: variables.$h1Desktop;
+        }
+      }
+    }
+  }
+
+  .c-faq__body {
+    width: 100%;
+    padding-top: functions.rem(30px);
+    border-top: 1px solid variables.$black;
+    height: 0;
+
+    display: none;
+
+    p {
+      width: 100%;
+    }
+  }
+
+  &.content .c-faq__body {
+    display: block;
+    height: auto;
+  }
+  &.content {
+    background-color: variables.$green;
+  }
+
+  &.content .c-faq__Title {
+    padding-bottom: functions.rem(30px);
+  }
+}

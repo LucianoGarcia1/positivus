@@ -1,10 +1,26 @@
-@use "../function/function" as function;
+@use "../function/function" as functions;
 //COLORS
 $black: #000000;
 $white: #ffffff;
 $gray: #f3f3f3;
 $green: #b9ff66;
 $dark: #191a23;
+$newsLetter: #292A32;
 
-$small: function.rem(20px);
-$h1Desktop: function.rem(60px);
+// SIZES
+$pDesktop: functions.rem(18px);
+$pMobile: functions.rem(16px);
+$small: functions.rem(20px);
+$h1Desktop: functions.rem(60px);
+$h1Mobile: functions.rem(43px);
+$h2Desktop: functions.rem(40px);
+$h2Mobile: functions.rem(36px);
+$h3Desktop: functions.rem(30px);
+$h3Mobile: functions.rem(26px);
+$h4Desktop: functions.rem(26px);
+$h4Mobile: functions.rem(18px);
+
+// BREAKPOINTS
+$desktop: 1200px;
+$tablet: 768px;
+$mobile: 500px;

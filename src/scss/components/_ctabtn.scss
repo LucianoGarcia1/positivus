@@ -1,19 +1,46 @@
 @use "../abstracts/variables/variables" as variables;
 @use "../abstracts/function/function" as functions;
+@use "../abstracts/mixins/mixins" as mixins;
+
 button {
   border-radius: functions.rem(14px);
+  height: functions.rem(68px);
   font-size: variables.$small;
   font-weight: 400;
   cursor: pointer;
   transition: all 0.25s;
   border: functions.rem(1px) solid variables.$dark;
 }
-.btnWhite {
-  min-width: functions.rem(231px);
+
+.c-button__ButtonCta {
+  border-radius: functions.rem(14px);
   height: functions.rem(68px);
+  font-size: variables.$small;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.25s;
+  border: functions.rem(1px) solid variables.$dark;
+
+  min-width: 100%;
+  background-color: variables.$dark;
+  color: variables.$white;
+  @include mixins.device(d) {
+    min-width: functions.rem(264px);
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: variables.$black;
+  }
+}
+.c-button--active {
+  min-width: 100%;
   background-color: transparent;
   color: variables.$black;
 
+  @include mixins.device(d) {
+    min-width: functions.rem(231px);
+  }
   &:hover {
     background-color: variables.$green;
   }

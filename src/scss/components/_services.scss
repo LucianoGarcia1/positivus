@@ -1,0 +1,184 @@
+@use "../abstracts/mixins/mixins" as mixins;
+@use "../abstracts/variables/variables" as variables;
+@use "../abstracts/function/function" as functions;
+
+.c-services__columnServices {
+  width: 100%;
+  @include mixins.flex(center, center, column);
+  gap: functions.rem(30px);
+
+  &:nth-child(2) {
+    padding: functions.rem(40px) 0;
+  }
+
+  @include mixins.device(t) {
+    &:nth-child(1) {
+      @include mixins.flex(flex-start, center, row);
+    }
+
+    @include mixins.flex(flex-start, flex-start, column);
+  }
+  .c-services__copy {
+    text-align: center;
+
+    @include mixins.device(t) {
+      text-align: left;
+      max-width: functions.rem(580px);
+      width: 100%;
+      //margin-left: functions.rem(150px);
+    }
+  }
+}
+
+.c-services__inlineBoxs {
+  width: 100%;
+  @include mixins.flex(center, center, column);
+  gap: functions.rem(30px);
+
+  @include mixins.device(d) {
+    @include mixins.flex(space-between, flex-start, row);
+  }
+
+  .c-services__BoxServices {
+    max-width: functions.rem(600px);
+    width: 100%;
+    min-height: functions.rem(310px);
+    @include mixins.flex(space-between, center, column-reverse);
+    padding: functions.rem(20px);
+    border-radius: functions.rem(45px);
+    border: 1px solid variables.$dark;
+
+    @include mixins.device(t) {
+      padding: functions.rem(50px);
+    }
+
+    @include mixins.device(m) {
+      flex-direction: row;
+    }
+
+    &.gray {
+      background-color: variables.$gray;
+      box-shadow: 0 5px 0 variables.$dark;
+
+      div {
+        .c-services__BoxTitle {
+          background-color: variables.$green;
+        }
+
+        a {
+          color: variables.$black;
+        }
+      }
+    }
+    &.green {
+      background-color: variables.$green;
+      box-shadow: 0 5px 0 variables.$dark;
+
+      div {
+        .c-services__BoxTitle {
+          background-color: variables.$white;
+        }
+
+        a {
+          color: variables.$black;
+        }
+      }
+    }
+    &.black {
+      background-color: variables.$dark;
+
+      div {
+        .c-services__BoxTitle {
+          background-color: variables.$white;
+        }
+
+        a {
+          color: variables.$white;
+        }
+      }
+    }
+
+    div {
+      .c-services__BoxTitle {
+        max-width: functions.rem(221px);
+        width: 100%;
+        margin-bottom: functions.rem(16px);
+        border-radius: functions.rem(7px);
+        @include mixins.padding(5px, 5px, 5px, 5px);
+
+        @include mixins.device(m) {
+          margin-bottom: functions.rem(93px);
+        }
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: functions.rem(16px);
+        font-size: variables.$small;
+        transition: all 0.5s;
+
+        &:hover {
+          transform: scale(1.06);
+        }
+
+        span {
+          display: none;
+
+          @include mixins.device(t) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-services__ServicesImg {
+  max-width: functions.rem(165px);
+  width: 100%;
+
+  @include mixins.device(m) {
+    max-width: functions.rem(210px);
+  }
+}
+
+.c-services__make {
+  width: 100%;
+  background-color: variables.$gray;
+  height: functions.rem(347px);
+  padding: functions.rem(20px);
+  border-radius: functions.rem(45px);
+  margin-top: functions.rem(60px);
+  @include mixins.flex(center, center, column);
+
+  @include mixins.device(t) {
+    @include mixins.flex(space-between, center, row);
+    padding: functions.rem(30px) functions.rem(50px);
+  }
+
+  .c-services__makeTitle {
+    max-width: 500px;
+    width: 100%;
+    @include mixins.flex(flex-start, flex-start, column);
+    gap: functions.rem(26px);
+
+    h3 {
+      width: 100%;
+    }
+  }
+
+  .c-services__img {
+    text-align: right;
+
+    img {
+      max-width: functions.rem(494px);
+      width: 100%;
+      display: none;
+
+      @include mixins.device(t) {
+        display: block;
+      }
+    }
+  }
+}

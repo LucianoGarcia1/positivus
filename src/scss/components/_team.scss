@@ -1,0 +1,101 @@
+@use "../abstracts/mixins/mixins" as mixins;
+@use "../abstracts/variables/variables" as variables;
+@use "../abstracts/function/function" as functions;
+
+.c-team {
+  width: 100%;
+  padding-bottom: functions.rem(60px);
+
+  @include mixins.device(d) {
+    padding-bottom: functions.rem(140px);
+  }
+}
+.c-team__Group {
+  width: 100%;
+  @include mixins.flex(center, center, column);
+  gap: functions.rem(30px);
+
+  &:nth-child(2) {
+    padding: functions.rem(40px) 0;
+  }
+
+  @include mixins.device(t) {
+    &:nth-child(1) {
+      @include mixins.flex(flex-start, center, row);
+    }
+
+    @include mixins.flex(flex-start, flex-start, column);
+  }
+
+  h2 {
+    text-align: center;
+  }
+  p.c-team__p {
+    max-width: functions.rem(473px);
+    text-align: center;
+
+    @include mixins.device(t) {
+      text-align: left;
+    }
+  }
+}
+.c-team__inlineBox {
+  width: 100%;
+  @include mixins.flex(center, center, column);
+  gap: functions.rem(30px);
+
+  &:nth-child(1) {
+    margin-bottom: functions.rem(30px);
+
+    @include mixins.device(d) {
+      margin-bottom: functions.rem(40px);
+    }
+  }
+
+  @include mixins.device(d) {
+    @include mixins.flex(space-between, center, row);
+  }
+}
+
+.c-team__Box {
+  max-width: functions.rem(390px);
+  width: 100%;
+  height: functions.rem(331px);
+  border: 1px solid variables.$dark;
+  box-shadow: 0 5px 0 variables.$dark;
+  border-radius: functions.rem(45px);
+  @include mixins.flex(center, center, column);
+  padding: functions.rem(40px) functions.rem(35px);
+  position: relative;
+
+  .c-team__Apresentation {
+    width: 100%;
+    @include mixins.flex(center, flex-end, row);
+    padding-bottom: functions.rem(28px);
+    gap: functions.rem(20px);
+
+    h4 {
+      font-size: variables.$h4Mobile;
+
+      span {
+        font-weight: 400;
+      }
+    }
+
+    a {
+      position: absolute;
+      top: functions.rem(40px);
+      right: functions.rem(35px);
+    }
+  }
+
+  .c-team__description {
+    border-top: 1px solid variables.$black;
+    width: 100%;
+    padding-top: functions.rem(28px);
+  }
+}
+.c-team__AllTeam {
+  width: 100%;
+  text-align: right;
+}

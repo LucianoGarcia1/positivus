@@ -1,8 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ButtonCta } from "./ButtonCta";
+import { useRef } from "react";
 
 export const Header = () => {
+  const ref = useRef();
+  const menuMobile = () => {
+    ref.current.classList.toggle("active");
+  };
   return (
     <header className="c-header">
       <div className="c-header__header">
@@ -17,7 +22,7 @@ export const Header = () => {
         </div>
 
         <nav className="c-header__nav">
-          <ul className="c-header__menu">
+          <ul className="c-header__menu" ref={ref}>
             <li className="c-header__items">
               <Link href="/">About us</Link>
             </li>
@@ -34,10 +39,20 @@ export const Header = () => {
               <Link href="/">Blog</Link>
             </li>
 
-            <ButtonCta type="button" classe="btnWhite">
+            <ButtonCta type="button" classe="c-button--active">
               Request a quote
             </ButtonCta>
           </ul>
+
+          <button className="c-header__MenuButton" onClick={menuMobile}>
+            <Image
+              priority
+              src="/img/menu.svg"
+              alt="Menu"
+              width={26}
+              height={19}
+            />
+          </button>
         </nav>
       </div>
       <div className="c-header__cta">
@@ -48,7 +63,7 @@ export const Header = () => {
             online through a range of services including SEO, PPC, social media
             marketing, and content creation.
           </p>
-          <ButtonCta type="button" classe="btnBlack">
+          <ButtonCta type="button" classe="c-button__ButtonCta">
             Book a consultation
           </ButtonCta>
         </div>
@@ -63,7 +78,43 @@ export const Header = () => {
         </div>
       </div>
 
-      <div className="c-header__logotypes"></div>
+      <div className="c-header__logotypes">
+        <div className="c-header__inlineLogos">
+          <Image
+            src="/img/amazon.svg"
+            alt="Amazon icon"
+            width={125}
+            height={48}
+          />
+          <Image
+            src="/img/drib.svg"
+            alt="Dribbble icon"
+            width={127}
+            height={48}
+          />
+          <Image
+            src="/img/hub.svg"
+            alt="HubSpot icon"
+            width={129}
+            height={48}
+          />
+        </div>
+        <div className="c-header__inlineLogos">
+          <Image
+            src="/img/notion.svg"
+            alt="Notion icon"
+            width={147}
+            height={48}
+          />
+          <Image
+            src="/img/netflix.svg"
+            alt="Netflix icon"
+            width={126}
+            height={48}
+          />
+          <Image src="/img/zoom.svg" alt="Zoom icon" width={111} height={48} />
+        </div>
+      </div>
     </header>
   );
 };

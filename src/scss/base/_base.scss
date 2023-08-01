@@ -1,3 +1,6 @@
+@use "../abstracts/variables/variables" as variables;
+@use "../abstracts/function/function" as functions;
+@use "../abstracts/mixins/mixins" as mixins;
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 * {
@@ -11,4 +14,55 @@ html,
 body {
   width: 100%;
   min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: variables.$h1Mobile;
+  color: variables.$black;
+  font-weight: 700;
+
+  @include mixins.device(d) {
+    font-size: variables.$h1Desktop;
+  }
+}
+
+h2 {
+  font-size: variables.$h2Mobile;
+  color: variables.$black;
+  font-weight: 700;
+  background-color: variables.$green;
+  padding: functions.rem(8px);
+  border-radius: functions.rem(14px);
+  @include mixins.device(d) {
+    font-size: variables.$h2Desktop;
+  }
+}
+
+h3 {
+  font-size: variables.$h3Mobile;
+  color: variables.$black;
+  @include mixins.device(d) {
+    font-size: variables.$h3Desktop;
+  }
+}
+
+h4 {
+  font-size: variables.$h4Mobile;
+  color: variables.$black;
+  @include mixins.device(d) {
+    font-size: variables.$h4Desktop;
+  }
+}
+
+p {
+  font-size: variables.$pMobile;
+  color: variables.$black;
+
+  @include mixins.device(d) {
+    font-size: variables.$pDesktop;
+  }
 }

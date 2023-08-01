@@ -1,23 +1,46 @@
 @use "../abstracts/mixins/mixins" as mixins;
 @use "../abstracts/variables/variables" as variables;
 @use "../abstracts/function/function" as functions;
+@use "../abstracts/animations/animations";
 
 .c-header {
   width: 100%;
   min-height: functions.rem(771px);
-  @include mixins.flex(start, start, column);
-  @include mixins.gap(70px);
-}
+  @include mixins.flex(flex-start, flex-start, column);
+  @include mixins.gap(40px);
 
+  @include mixins.device(d) {
+    @include mixins.gap(70px);
+  }
+}
 .c-header__header {
   width: 100%;
   height: functions.rem(68px);
   @include mixins.flex(space-between, center, row);
+  //position: relative;
 
   .c-header__menu {
-    @include mixins.flex(center, center, row);
+    width: 100%;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    background-color: variables.$green;
+    display: none;
     list-style: none;
-    @include mixins.gap(40px);
+    @include mixins.gap(20px);
+    padding: functions.rem(20px);
+    transition: all 0.25s;
+
+    &.active {
+      @include mixins.flex(center, center, column);
+    }
+
+    @include mixins.device(d) {
+      @include mixins.flex(center, center, row);
+      @include mixins.gap(40px);
+      background-color: transparent;
+      position: static;
+    }
 
     a {
       font-size: variables.$small;
@@ -30,33 +53,85 @@
       }
     }
   }
+
+  .c-header__MenuButton {
+    display: block;
+    background: transparent;
+    border: none;
+
+    @include mixins.device(d) {
+      display: none;
+    }
+  }
 }
 
 .c-header__cta {
   width: 100%;
   min-height: functions.rem(515px);
-  @include mixins.flex(space-between, start, row);
+  @include mixins.flex(flex-start, flex-start, column);
+  gap: functions.rem(20px);
 
-  .c-header__details {
-    width: functions.rem(531px);
-    @include mixins.flex(start, start, column);
-    gap: 35px;
-
-    h1 {
-      font-size: variables.$h1Desktop;
-      color: variables.$black;
-      font-weight: 700;
-    }
-    p {
-      font-size: variables.$small;
-      color: variables.$black;
-    }
+  @include mixins.device(d) {
+    @include mixins.flex(space-between, flex-start, row);
+    gap: 0;
   }
 
+  .c-header__details {
+    width: 100%;
+    @include mixins.flex(flex-start, flex-start, column);
+    gap: functions.rem(20px);
+
+    @include mixins.device(d) {
+      max-width: functions.rem(531px);
+      gap: functions.rem(35px);
+    }
+
+    p {
+      font-size: variables.$pMobile;
+      color: variables.$black;
+
+      @include mixins.device(d) {
+        font-size: variables.$small;
+      }
+    }
+  }
   .c-header__ilustration {
+    @include mixins.flex(flex-start, flex-start, column);
     img {
-      width: functions.rem(600.46px);
-      height: functions.rem(515px);
+      max-width: functions.rem(600.46px);
+      width: 100%;
+      max-height: functions.rem(515px);
+      height: 100%;
+    }
+  }
+}
+
+.c-header__logotypes {
+  width: 100%;
+  @include mixins.flex(flex-start, flex-start, column);
+  gap: functions.rem(20px);
+
+  border-radius: functions.rem(14px);
+  box-shadow: 0 0 0 1px variables.$gray;
+  padding-left: functions.rem(5px);
+  transition: all 0.5s;
+  overflow: hidden;
+
+  @include mixins.device(t) {
+    flex-direction: row;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .c-header__inlineLogos {
+    width: 100%;
+    @include mixins.flex(space-between, flex-start, row);
+    gap: functions.rem(20px);
+    transition: all 0.5s;
+    animation: slide 15s ease-in-out infinite;
+
+    @include mixins.device(t) {
+      justify-content: space-around;
     }
   }
 }

@@ -1,0 +1,13 @@
+@use "../abstracts/mixins/mixins" as mixins;
+@use "../abstracts/variables/variables" as variables;
+@use "../abstracts/function/function" as functions;
+
+.p-home {
+  width: 100%;
+  @include mixins.padding(60px, 0px, 60px, 0px);
+  gap: functions.rem(40px);
+
+  @include mixins.device(t) {
+    @include mixins.padding(140px, 0px, 140px, 0px);
+  }
+}
