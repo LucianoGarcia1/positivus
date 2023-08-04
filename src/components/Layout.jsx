@@ -6,7 +6,7 @@ export const Layout = ({ children }) => {
     <div className="c-layout">
       <Header />
       {children}
-      <Footer/>
+      <Footer />
     </div>
-  );
+  );<Header />;
 };

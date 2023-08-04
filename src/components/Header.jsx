@@ -2,8 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { ButtonCta } from "./ButtonCta";
 import { useRef } from "react";
+import { useRouter } from "next/router";
 
 export const Header = () => {
+  const router = useRouter();
   const ref = useRef();
   const menuMobile = () => {
     ref.current.classList.toggle("active");
@@ -55,66 +57,76 @@ export const Header = () => {
           </button>
         </nav>
       </div>
-      <div className="c-header__cta">
-        <div className="c-header__details">
-          <h1>Navigating the digital landscape for success</h1>
-          <p>
-            Our digital marketing agency helps businesses grow and succeed
-            online through a range of services including SEO, PPC, social media
-            marketing, and content creation.
-          </p>
-          <ButtonCta type="button" classe="c-button__ButtonCta">
-            Book a consultation
-          </ButtonCta>
-        </div>
-        <div className="c-header__ilustration">
-          <Image
-            priority
-            src="/img/cta-header.svg"
-            alt="ilustration"
-            width={600.46}
-            height={515}
-          />
-        </div>
-      </div>
+      {router.asPath === "/" ? (
+        <>
+          <div className="c-header__cta">
+            <div className="c-header__details">
+              <h1>Navigating the digital landscape for success</h1>
+              <p>
+                Our digital marketing agency helps businesses grow and succeed
+                online through a range of services including SEO, PPC, social
+                media marketing, and content creation.
+              </p>
+              <ButtonCta type="button" classe="c-button__ButtonCta">
+                Book a consultation
+              </ButtonCta>
+            </div>
+            <div className="c-header__ilustration">
+              <Image
+                priority
+                src="/img/cta-header.svg"
+                alt="ilustration"
+                width={600.46}
+                height={515}
+                unoptimized
+              />
+            </div>
+          </div>
 
-      <div className="c-header__logotypes">
-        <div className="c-header__inlineLogos">
-          <Image
-            src="/img/amazon.svg"
-            alt="Amazon icon"
-            width={125}
-            height={48}
-          />
-          <Image
-            src="/img/drib.svg"
-            alt="Dribbble icon"
-            width={127}
-            height={48}
-          />
-          <Image
-            src="/img/hub.svg"
-            alt="HubSpot icon"
-            width={129}
-            height={48}
-          />
-        </div>
-        <div className="c-header__inlineLogos">
-          <Image
-            src="/img/notion.svg"
-            alt="Notion icon"
-            width={147}
-            height={48}
-          />
-          <Image
-            src="/img/netflix.svg"
-            alt="Netflix icon"
-            width={126}
-            height={48}
-          />
-          <Image src="/img/zoom.svg" alt="Zoom icon" width={111} height={48} />
-        </div>
-      </div>
+          <div className="c-header__logotypes">
+            <div className="c-header__inlineLogos">
+              <Image
+                src="/img/amazon.svg"
+                alt="Amazon icon"
+                width={125}
+                height={48}
+              />
+              <Image
+                src="/img/drib.svg"
+                alt="Dribbble icon"
+                width={127}
+                height={48}
+              />
+              <Image
+                src="/img/hub.svg"
+                alt="HubSpot icon"
+                width={129}
+                height={48}
+              />
+            </div>
+            <div className="c-header__inlineLogos">
+              <Image
+                src="/img/notion.svg"
+                alt="Notion icon"
+                width={147}
+                height={48}
+              />
+              <Image
+                src="/img/netflix.svg"
+                alt="Netflix icon"
+                width={126}
+                height={48}
+              />
+              <Image
+                src="/img/zoom.svg"
+                alt="Zoom icon"
+                width={111}
+                height={48}
+              />
+            </div>
+          </div>
+        </>
+      ) : null}
     </header>
   );
 };

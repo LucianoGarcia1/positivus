@@ -1,0 +1,185 @@
+@use "../abstracts/mixins/mixins" as mixins;
+@use "../abstracts/variables/variables" as variables;
+@use "../abstracts/function/function" as functions;
+
+.c-contact {
+  width: 100%;
+}
+.c-contact__Column {
+  width: 100%;
+  @include mixins.flex(center, center, column);
+  gap: functions.rem(30px);
+
+  &:nth-child(2) {
+    padding: functions.rem(40px) 0;
+  }
+
+  @include mixins.device(t) {
+    &:nth-child(1) {
+      @include mixins.flex(flex-start, center, row);
+    }
+
+    @include mixins.flex(flex-start, flex-start, column);
+  }
+
+  h2 {
+    text-align: center;
+  }
+  p.c-contact__p {
+    max-width: functions.rem(323px);
+    text-align: center;
+
+    @include mixins.device(t) {
+      text-align: left;
+    }
+  }
+}
+.c-contact__wrapper {
+  width: 100%;
+  background-color: variables.$gray;
+  padding: functions.rem(40px) functions.rem(30px);
+  position: relative;
+
+  @include mixins.device(t) {
+    @include mixins.padding(60px, 0px, 80px, 100px);
+    &::before {
+      content: "";
+      background-image: url("/img/mask.svg");
+      background-repeat: no-repeat;
+      width: 20%;
+      height: 649px;
+      position: absolute;
+      left: 80%;
+    }
+  }
+  @include mixins.device(d) {
+    &::before {
+      width: 27%;
+      left: 73%;
+    }
+  }
+  border-radius: functions.rem(45px);
+}
+
+.c-contact__form {
+  width: 100%;
+  @include mixins.flex(flex-start, flex-start, column);
+  gap: functions.rem(40px);
+
+  @include mixins.device(t) {
+    max-width: functions.rem(556px);
+  }
+
+  .c-contact__snippets {
+    width: 100%;
+    @include mixins.flex(flex-start, center, row);
+    gap: functions.rem(35px);
+
+    @include mixins.device(t) {
+      gap: functions.rem(35px);
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      font-size: variables.$pMobile;
+      color: variables.$black;
+
+      @include mixins.device(t) {
+        font-size: variables.$pDesktop;
+      }
+
+      input[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        width: functions.rem(20px);
+        height: functions.rem(20px);
+        border-radius: 50%;
+        border: 1px solid variables.$dark;
+        background-color: transparent;
+        outline: none;
+        cursor: pointer;
+        margin-right: functions.rem(14px);
+        position: relative;
+
+        @include mixins.device(t) {
+          width: functions.rem(28px);
+          height: functions.rem(28px);
+        }
+
+        &:checked {
+          background-color: transparent;
+        }
+        &:checked::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: functions.rem(10px);
+          height: functions.rem(10px);
+          border-radius: 50%;
+          background-color: variables.$green;
+          transform: translate(-50%, -50%);
+
+          @include mixins.device(t) {
+            width: functions.rem(14px);
+            height: functions.rem(14px);
+          }
+        }
+      }
+    }
+  }
+
+  .c-contact__camps {
+    width: 100%;
+    @include mixins.flex(center, center, column);
+    gap: functions.rem(25px);
+
+    label {
+      width: 100%;
+      @include mixins.flex(center, flex-start, column);
+      gap: functions.rem(5px);
+      color: variables.$black;
+      font-size: functions.rem(16px);
+
+      input {
+        height: functions.rem(59px);
+      }
+
+      textarea {
+        height: functions.rem(190px);
+        resize: none;
+      }
+      input,
+      textarea {
+        width: 100%;
+        border-radius: functions.rem(14px);
+        padding: functions.rem(16px) functions.rem(30px);
+        font-size: functions.rem(18px);
+        background-color: variables.$white;
+        border: 1px solid variables.$black;
+        color: variables.$dark;
+        outline: none;
+
+        &::placeholder {
+          color: variables.$placeholder;
+        }
+
+        &:focus {
+          box-shadow: 0px 0px 3px 1px rgba(185, 255, 102, 5);
+          border-color: variables.$green;
+        }
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+
+    &:hover {
+      background-color: variables.$white;
+    }
+  }
+}

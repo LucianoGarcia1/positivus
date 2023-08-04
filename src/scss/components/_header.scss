@@ -5,7 +5,6 @@
 
 .c-header {
   width: 100%;
-  min-height: functions.rem(771px);
   @include mixins.flex(flex-start, flex-start, column);
   @include mixins.gap(40px);
 

@@ -1,14 +1,15 @@
 import Case from "@/components/Case";
+import { Contact } from "@/components/Contact";
 import { Faq } from "@/components/Faq";
-import { Layout } from "@/components/Layout";
 import { Services } from "@/components/Services";
 import { Team } from "@/components/Team";
+import { Testimonials } from "@/components/Testimonials";
 import Head from "next/head";
 const Home = () => {
   return (
-    <Layout>
+    <>
       <Head>
-        <title>Positivus | Home</title>
+        <title>Home | Positivus</title>
         <meta name="author" content="Luciano Garcia | Frontend Developer" />
         <meta
           name="description"
@@ -20,8 +21,10 @@ const Home = () => {
         <Case />
         <Faq />
         <Team />
+        <Testimonials />
+        <Contact />
       </main>
-    </Layout>
+    </>
   );
 };
 export default Home;

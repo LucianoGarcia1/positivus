@@ -1,0 +1,27 @@
+@use "../abstracts/mixins/mixins" as mixins;
+@use "../abstracts/variables/variables" as variables;
+@use "../abstracts/function/function" as functions;
+
+.p-404 {
+  width: 100%;
+  min-height: 60vh;
+  @include mixins.flex(center, center, column);
+
+  .p-404__return {
+    width: 100%;
+
+    h1 {
+      color: variables.$white;
+      margin-bottom: functions.rem(20px);
+      background-color: variables.$dark;
+      padding: functions.rem(20px);
+      border-radius: functions.rem(45px);
+    }
+
+    a {
+      @include mixins.flex(center, center, row);
+    }
+
+    @include mixins.flex(center, center, column);
+  }
+}

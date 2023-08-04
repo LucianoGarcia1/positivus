@@ -1,0 +1,123 @@
+@use "../abstracts/mixins/mixins" as mixins;
+@use "../abstracts/variables/variables" as variables;
+@use "../abstracts/function/function" as functions;
+
+.c-testi {
+  width: 100%;
+  padding-bottom: functions.rem(60px);
+
+  @include mixins.device(d) {
+    padding-bottom: functions.rem(140px);
+  }
+}
+
+.c-testi__Column {
+  width: 100%;
+  @include mixins.flex(center, center, column);
+  gap: functions.rem(30px);
+
+  &:nth-child(2) {
+    padding: functions.rem(40px) 0;
+  }
+
+  @include mixins.device(t) {
+    &:nth-child(1) {
+      @include mixins.flex(flex-start, center, row);
+    }
+
+    @include mixins.flex(flex-start, flex-start, column);
+  }
+
+  h2 {
+    text-align: center;
+  }
+  p.c-testi__p {
+    max-width: functions.rem(473px);
+    text-align: center;
+
+    @include mixins.device(t) {
+      text-align: left;
+    }
+  }
+}
+.c-testi__slide {
+  width: 100%;
+  background-color: variables.$dark;
+  border-radius: functions.rem(45px);
+
+  .c-testi__wrapper {
+    width: 100%;
+    padding: functions.rem(60px);
+    @include mixins.flex(center, center, column);
+  }
+}
+.c-testi__testimonial {
+  max-width: functions.rem(606px);
+  width: 100%;
+  border: 1px solid variables.$green;
+  border-radius: functions.rem(45px);
+  padding: functions.rem(30px);
+  margin-bottom: functions.rem(40px);
+  position: relative;
+
+  @include mixins.device(t) {
+    padding: functions.rem(48px) functions.rem(52px);
+  }
+
+  &::after {
+    position: absolute;
+    top: 100%;
+    content: "";
+    display: block;
+    margin-left: functions.rem(10px);
+    border-width: functions.rem(20px);
+    border-style: solid;
+    border-color: variables.$green transparent transparent transparent;
+    z-index: 1;
+    background-color: transparent;
+
+    @include mixins.device(t) {
+      margin-left: functions.rem(-10px);
+      border-width: functions.rem(30px);
+    }
+  }
+
+  p {
+    color: variables.$white;
+  }
+}
+.c-testi__profile {
+  max-width: functions.rem(526px);
+  width: 100%;
+  h4 {
+    color: variables.$green;
+  }
+  span {
+    font-size: variables.$pMobile;
+    color: variables.$white;
+
+    @include mixins.device(d) {
+      font-size: variables.$pDesktop;
+    }
+  }
+}
+/* Estilo para o botão de navegação "Anterior" */
+/* Estilo para a cor da seta "Anterior" */
+.swiper-button-prev::after {
+  color: variables.$green;
+  margin-left: functions.rem(30px);
+
+  @include mixins.device(t) {
+    margin-left: functions.rem(60px);
+  }
+}
+
+/* Estilo para a cor da seta "Próximo" */
+.swiper-button-next::after {
+  color: variables.$green;
+  margin-right: functions.rem(30px);
+
+  @include mixins.device(t) {
+    margin-right: functions.rem(60px);
+  }
+}
