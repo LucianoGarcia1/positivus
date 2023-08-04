@@ -1,4 +1,4 @@
-import { ButtonCta } from "./ButtonCta";
+import { Button } from "./Button";
 
 export const Contact = () => {
   return (
@@ -40,9 +40,9 @@ export const Contact = () => {
               </label>
             </div>
 
-            <ButtonCta classe="c-button__ButtonCta" type="button">
+            <Button classe="c-button__ButtonCta" type="button">
               Send Message
-            </ButtonCta>
+            </Button>
           </form>
         </div>
       </div>

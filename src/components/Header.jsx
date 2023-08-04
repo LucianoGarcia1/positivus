@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ButtonCta } from "./ButtonCta";
+import { Button } from "./Button";
 import { useRef } from "react";
 import { useRouter } from "next/router";
 
@@ -41,9 +41,9 @@ export const Header = () => {
               <Link href="/">Blog</Link>
             </li>
 
-            <ButtonCta type="button" classe="c-button--active">
+            <Button type="button" classe="c-button--active">
               Request a quote
-            </ButtonCta>
+            </Button>
           </ul>
 
           <button className="c-header__MenuButton" onClick={menuMobile}>
@@ -67,9 +67,9 @@ export const Header = () => {
                 online through a range of services including SEO, PPC, social
                 media marketing, and content creation.
               </p>
-              <ButtonCta type="button" classe="c-button__ButtonCta">
+              <Button type="button" classe="c-button__ButtonCta">
                 Book a consultation
-              </ButtonCta>
+              </Button>
             </div>
             <div className="c-header__ilustration">
               <Image
@@ -78,7 +78,6 @@ export const Header = () => {
                 alt="ilustration"
                 width={600.46}
                 height={515}
-                unoptimized
               />
             </div>
           </div>
@@ -90,18 +89,21 @@ export const Header = () => {
                 alt="Amazon icon"
                 width={125}
                 height={48}
+                priority
               />
               <Image
                 src="/img/drib.svg"
                 alt="Dribbble icon"
                 width={127}
                 height={48}
+                priority
               />
               <Image
                 src="/img/hub.svg"
                 alt="HubSpot icon"
                 width={129}
                 height={48}
+                priority
               />
             </div>
             <div className="c-header__inlineLogos">
@@ -110,18 +112,21 @@ export const Header = () => {
                 alt="Notion icon"
                 width={147}
                 height={48}
+                priority
               />
               <Image
                 src="/img/netflix.svg"
                 alt="Netflix icon"
                 width={126}
                 height={48}
+                priority
               />
               <Image
                 src="/img/zoom.svg"
                 alt="Zoom icon"
                 width={111}
                 height={48}
+                priority
               />
             </div>
           </div>

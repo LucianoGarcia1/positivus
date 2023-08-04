@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ButtonCta } from "./ButtonCta";
+import { Button } from "./Button";
 export const Services = () => {
   return (
     <section className="c-services">
@@ -25,6 +25,7 @@ export const Services = () => {
                   width={41}
                   height={41}
                   alt="Learn more"
+                  priority
                 />
 
                 <span>Learn more</span>
@@ -38,6 +39,7 @@ export const Services = () => {
                 height={170}
                 alt="Learn more"
                 className="c-services__ServicesImg"
+                priority
               />
             </div>
           </div>
@@ -53,6 +55,7 @@ export const Services = () => {
                   width={41}
                   height={41}
                   alt="Learn more"
+                  priority
                 />
 
                 <span>Learn more</span>
@@ -66,6 +69,7 @@ export const Services = () => {
                 height={148}
                 alt="Learn more"
                 className="c-services__ServicesImg"
+                priority
               />
             </div>
           </div>
@@ -82,6 +86,7 @@ export const Services = () => {
                   width={41}
                   height={41}
                   alt="Learn more"
+                  priority
                 />
 
                 <span>Learn more</span>
@@ -95,6 +100,7 @@ export const Services = () => {
                 height={210}
                 alt="Learn more"
                 className="c-services__ServicesImg"
+                priority
               />
             </div>
           </div>
@@ -108,6 +114,7 @@ export const Services = () => {
                   width={41}
                   height={41}
                   alt="Learn more"
+                  priority
                 />
 
                 <span>Learn more</span>
@@ -121,6 +128,7 @@ export const Services = () => {
                 height={194}
                 alt="Learn more"
                 className="c-services__ServicesImg"
+                priority
               />
             </div>
           </div>
@@ -137,6 +145,7 @@ export const Services = () => {
                   width={41}
                   height={41}
                   alt="Learn more"
+                  priority
                 />
 
                 <span>Learn more</span>
@@ -150,6 +159,7 @@ export const Services = () => {
                 height={196}
                 alt="Learn more"
                 className="c-services__ServicesImg"
+                priority
               />
             </div>
           </div>
@@ -163,6 +173,7 @@ export const Services = () => {
                   width={41}
                   height={41}
                   alt="Learn more"
+                  priority
                 />
 
                 <span>Learn more</span>
@@ -176,6 +187,7 @@ export const Services = () => {
                 height={170}
                 alt="Learn more"
                 className="c-services__ServicesImg"
+                priority
               />
             </div>
           </div>
@@ -190,12 +202,16 @@ export const Services = () => {
               services can help your business grow and succeed online.
             </p>
 
-            <ButtonCta classe="c-button__ButtonCta">
-              Get your free proposal
-            </ButtonCta>
+            <Button classe="c-button__ButtonCta">Get your free proposal</Button>
           </div>
           <div className="c-services__img">
-            <Image src="../img/make.svg" width={494} height={395} alt="make" />
+            <Image
+              src="../img/make.svg"
+              width={494}
+              height={395}
+              alt="make"
+              priority
+            />
           </div>
         </div>
       </div>

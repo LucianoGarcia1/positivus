@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ButtonCta } from "./ButtonCta";
+import { Button } from "./Button";
 
 export const Team = () => {
   return (
@@ -178,9 +178,9 @@ export const Team = () => {
       </div>
 
       <div className="c-team__AllTeam">
-        <ButtonCta classe="c-button__ButtonCta" type="button">
+        <Button classe="c-button__ButtonCta" type="button">
           She all team
-        </ButtonCta>
+        </Button>
       </div>
     </section>
   );
