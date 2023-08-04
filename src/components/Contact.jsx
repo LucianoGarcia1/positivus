@@ -6,10 +6,9 @@ export const Contact = () => {
       <div className="c-contact__Column">
         <h2>Contact Us</h2>
         <p className="c-contact__p">
-          Connect with Us: Let's Discuss Your Digital Marketing Needs
+          Connect with Us: Let&apos;s Discuss Your Digital Marketing Needs
         </p>
       </div>
-
       <div className="c-contact__Column">
         <div className="c-contact__wrapper">
           <form className="c-contact__form">
@@ -41,7 +40,7 @@ export const Contact = () => {
               </label>
             </div>
 
-            <ButtonCta type="button" classe="c-button__ButtonCta">
+            <ButtonCta classe="c-button__ButtonCta" type="button">
               Send Message
             </ButtonCta>
           </form>

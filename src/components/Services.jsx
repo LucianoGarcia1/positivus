@@ -184,7 +184,7 @@ export const Services = () => {
       <div className="c-services__columnServices">
         <div className="c-services__make">
           <div className="c-services__makeTitle">
-            <h3>Let’s make things happen</h3>
+            <h3>Let&apos;s make things happen</h3>
             <p>
               Contact us today to learn more about how our digital marketing
               services can help your business grow and succeed online.
@@ -195,7 +195,7 @@ export const Services = () => {
             </ButtonCta>
           </div>
           <div className="c-services__img">
-            <Image src="../img/make.svg" width={494} height={395}  alt="make"/>
+            <Image src="../img/make.svg" width={494} height={395} alt="make" />
           </div>
         </div>
       </div>
