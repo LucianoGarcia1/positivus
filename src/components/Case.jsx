@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Case = () => {
+export const Case = () => {
   return (
     <section className="c-case">
       <div className="c-case__ColumnCases">
@@ -76,5 +76,3 @@ const Case = () => {
     </section>
   );
 };
-
-export default Case;

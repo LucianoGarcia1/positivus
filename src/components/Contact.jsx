@@ -1,4 +1,3 @@
-import React from "react";
 import { ButtonCta } from "./ButtonCta";
 
 export const Contact = () => {

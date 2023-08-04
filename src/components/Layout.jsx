@@ -8,5 +8,5 @@ export const Layout = ({ children }) => {
       {children}
       <Footer />
     </div>
-  );<Header />;
+  );
 };

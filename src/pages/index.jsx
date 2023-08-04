@@ -1,10 +1,11 @@
-import Case from "@/components/Case";
-import { Contact } from "@/components/Contact";
+import { Case } from "@/components/Case";
 import { Faq } from "@/components/Faq";
 import { Services } from "@/components/Services";
 import { Team } from "@/components/Team";
 import { Testimonials } from "@/components/Testimonials";
+import { Contact } from "@/components/Contact";
 import Head from "next/head";
+
 const Home = () => {
   return (
     <>
